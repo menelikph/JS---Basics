@@ -58,7 +58,30 @@ function mostrarPares(list){
     }
 }
 
-const numeros = [3, 8, 4, 7, 10];
+const numeroslist = [3, 8, 4, 7, 10];
 mostrarPares(numeros);
 
+
+
+//Mostrar en unos nuevos arrays
+let pares = [];
+let impares = [];
+
+function mostrarPares(list){
+    for (let i = 0; i < list.length; i++) {
+        if (list[i] % 2 === 0){
+          pares.push(list[i])
+        }else{
+          impares.push(list[i]) //pse utiliza el push para agragar en la lista 
+        }
+    }
+}
+
+
+const numeros = [3, 8, 4, 7, 10];
+mostrarPares(numeros);
+console.log(`pares: ${pares} \nImpares: ${impares}`);
+
+
+//*---------------------------------------------------------------------------------------------------------------------------*
 
