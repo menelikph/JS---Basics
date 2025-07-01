@@ -84,4 +84,35 @@ console.log(`pares: ${pares} \nImpares: ${impares}`);
 
 
 //*---------------------------------------------------------------------------------------------------------------------------*
+//generar  la lista con numeros ramdom
+let num = []
+let pares2 = [];
+let impares2 = [];
 
+function generarNumeros(cantidad = 10){
+  for (let i = 0; i < cantidad; i++) {
+    let aleatorio = Math.floor(Math.random() * 100)
+    num.push(aleatorio)
+  }
+}
+
+function ParesImpares(list){
+    for (let i = 0; i < list.length; i++) {
+        if (list[i] % 2 === 0){
+          console.log(num[i] + " es par");
+          pares.push(list[i])
+        }else{
+          console.log(num[i] + " es impar");
+          impares.push(list[i])
+        }
+    }
+}
+
+generarNumeros()
+ParesImpares(num)
+console.log("Pares actualizados:", pares);
+console.log("Impares:", impares);
+
+
+// const numeros = [3, 8, 4, 7, 10]; necesito verificar primero cuales son pares y impares y  actualizar los numeros impares con un numero par ramdom del 1-30 
+// y por ultimo mostrar la lista actualiada. 
