@@ -114,5 +114,5 @@ console.log("Pares actualizados:", pares);
 console.log("Impares:", impares);
 
 
-// const numeros = [3, 8, 4, 7, 10]; necesito verificar primero cuales son pares y impares y  actualizar los numeros impares con un numero par ramdom del 1-30 
-// y por ultimo mostrar la lista actualiada. 
+// const numeros = [3, 8, 4, 7, 10]; necesito verificar primero cuales  numeros son pares y impares y  actualizar los numeros impares con un numero par ramdom del 1-30 
+// y por ultimo mostrar la lista actualizada.   
