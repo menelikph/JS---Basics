@@ -58,8 +58,8 @@ function mostrarPares(list){
     }
 }
 
-const numeroslist = [3, 8, 4, 7, 10];
-mostrarPares(numeros);
+/* const numeroslist = [3, 8, 4, 7, 10];
+mostrarPares(numeros); */
 
 
 
@@ -78,10 +78,10 @@ function mostrarPares(list){
 }
 
 
-const numeros = [3, 8, 4, 7, 10];
+/* const numeros = [3, 8, 4, 7, 10];
 mostrarPares(numeros);
 console.log(`pares: ${pares} \nImpares: ${impares}`);
-
+ */
 
 //*---------------------------------------------------------------------------------------------------------------------------*
 //generar  la lista con numeros ramdom
@@ -108,11 +108,80 @@ function ParesImpares(list){
     }
 }
 
-generarNumeros()
+/* generarNumeros()
 ParesImpares(num)
 console.log("Pares actualizados:", pares);
-console.log("Impares:", impares);
+console.log("Impares:", impares); */
 
 
 // const numeros = [3, 8, 4, 7, 10]; necesito verificar primero cuales  numeros son pares y impares y  actualizar los numeros impares con un numero par ramdom del 1-30 
 // y por ultimo mostrar la lista actualizada.   
+
+const num1 = [3, 8, 4, 7, 10];
+const par = [];
+const imp = [];
+
+function paresImpares(list){
+    for (let i = 0; i < list.length; i++) {
+        if (list[i] %2 === 0) {
+            console.log(list[i] + "  Es par")
+            par.push(list[i])
+        } else {
+            console.log(list[i] + " Es impar")
+            imp.push(list[i])
+        }
+    }
+}
+
+
+paresImpares(num1);
+console.log(num1)
+console.log(par)
+console.log(imp)
+
+function pushParesRandom(list){
+    for (let i = 0; i< list.length; i++) {
+        let aleatorio = Math.floor(Math.random() * 30)
+        if (aleatorio %2 === 0) {
+            imp.push(aleatorio);
+        }
+    }
+}
+
+pushParesRandom(num1)
+console.log(imp)
+
+//*---------------------------------------------------------------------------------------------------------------------------*
+
+function numMayor(list){
+    let mayores = []
+
+    for (let i = 0; i < list.length; i++) {
+        if (list[i] > 10){
+            mayores.push(list[i])
+        }
+    }
+    return mayores
+}
+
+const numerosMay = [2, 80, 11, 20, 3, 5, 20];
+const resultado = numMayor(numerosMay);
+console.log("mayores a 10: ", resultado)
+
+
+//*---------------------------------------------------------------------------------------------------------------------------*
+function palabrasLargas(list){
+    let resultado = []
+    for (let i = 0; i < list.length; i++) {
+        if (list[i].length > 5) {
+            resultado.push(list[i])
+        }
+    }
+    return resultado;
+}
+
+const palabras = ["sol", "lluvia", "hablador", "comunicacion", "telegrama", "nido"];
+
+const result = palabrasLargas(palabras);
+console.log("palabras con mas de 5 letras: " + result)
+
