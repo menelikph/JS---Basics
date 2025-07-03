@@ -131,3 +131,70 @@ function analisisVideojuegos(list) {
 
 
 analisisVideojuegos(videojuegos)
+
+//*---------------------------------------------------------------------------------------------------------------------------*
+
+const mascotas = [
+  { nombre: "Milo", especie: "perro", edad: 5 },
+  { nombre: "Luna", especie: "gato", edad: 2 },
+  { nombre: "Rocky", especie: "perro", edad: 8 },
+  { nombre: "Nina", especie: "gato", edad: 1 },
+  { nombre: "Toby", especie: "conejo", edad: 3 }
+];
+
+function analizarMascotas(list) {
+  let numMascotas = list.length
+  const perros = [];
+  const gatos = [];
+  const nombreGatos = [];
+  const otros = [];
+  let sumaEdades = 0;
+  let promedio = 0;
+  let mayor = list[0];
+  let menor = list[0];
+
+  for (let i = 0; i < list.length; i++) {
+    sumaEdades += list[i].edad;
+    if (list[i].especie === "perro") {
+      perros.push(list[i]);
+    }else if (list[i].especie === "gato") {
+      gatos.push(list[i]);
+      nombreGatos.push(list[i].nombre)
+    } else {
+      otros.push(list[i]);
+    }
+
+    if (list[i].edad > mayor.edad) {
+      mayor = list[i]
+    }else if (list[i].edad < menor.edad) {
+      menor = list[i]
+    }
+    
+  }
+  promedio = sumaEdades / list.length
+
+  //todo: Impimir en pantalla resultados
+  console.log("Numero de mascotas: ", numMascotas)
+  console.table(mascotas);
+
+  console.log("perros: ")
+  console.table(perros)
+
+  console.log("gatos: ")
+  console.table(gatos)
+
+  console.log("otras especies: ")
+  console.table(otros)
+
+  console.log("Suma de las edades:", sumaEdades)
+
+  console.log("Estos son los gatos: ", nombreGatos)
+
+  console.log("el promedio de edades es: ", promedio)
+
+  console.log("la mascota mayor es:", mayor.nombre, "y tiene:", mayor.edad, "años" )
+  console.log("la mascota menor es:", menor.nombre, "y tiene:", menor.edad, "años" )
+}
+
+
+analizarMascotas(mascotas)
